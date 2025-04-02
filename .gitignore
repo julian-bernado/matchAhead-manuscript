@@ -1,3 +1,18 @@
+# calipers
+calipers/
+
+# data
+data/
+
+# predicitons
+predictions/
+
+# distances
+distances/
+
+# models
+models/
+
 # History files
 .Rhistory
 .Rapp.history
