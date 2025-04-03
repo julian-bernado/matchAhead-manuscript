@@ -8,7 +8,6 @@
 log <- list(
     file_started = Sys.time(),
     arguments = NA,
-    original_nt = NA,
     final_nt = NA,
     parallel_splits = NA,
     total_runtime = NA
@@ -46,7 +45,6 @@ treatment_schools <- sample(school_scores$school_id, size = 3, replace = FALSE)
 final_nt <- length(treatment_schools)
 
 # Write the log
-log$original_nt <- original_nt
 log$final_nt <- final_nt
 
 # debug with a much smaller dataset
