@@ -27,6 +27,7 @@ source("scripts/distances.R")
 arguments <- commandArgs(trailingOnly = TRUE)
 grade <- as.character(arguments[1])
 subject <- as.character(arguments[2])
+method <- as.character(arguments[3])
 
 # Update the log
 log$arguments <- paste("Grade:", grade, "Subject:", subject)
@@ -40,14 +41,8 @@ student_scores <- read_csv(student_data_path)
 caliper <- readRDS(caliper_path)
 caliper <- caliper[1,1] # Returned as a matrix
 
-# Load in the treatment schools
-load("/home/tea/adsy/data/adsy_models21_22.Rdata") #df is called adsy_models
-treatment_schools <- as.numeric(adsy_models$CAMPUS)
-original_nt <- length(treatment_schools)
-
-# Limit to those present in our data (there are about 30 or so that will not be present each time)
-# This is because some treatment schools don't serve all grades
-treatment_schools <- treatment_schools[treatment_schools %in% as.character(school_scores$school_id)]
+# Create the treatment variable
+treatment_schools <- sample(school_scores$school_id, size = 340, replace = FALSE)
 final_nt <- length(treatment_schools)
 
 # Write the log
@@ -104,8 +99,15 @@ for (i in 1:num_cores){
 # Now, we call the get_distance function in parallel across the chunks
 cl <- makeCluster(num_cores)
 registerDoParallel(cl)
-foreach(i = 1:num_cores, .packages = c("dplyr", "readr")) %dopar% {
-    get_distance(school_chunks[[i]], student_chunks[[i]], treatment_chunks[[i]], caliper, c(grade, subject, i))
+foreach(i = 1:num_cores, .packages = c("dplyr", "readr", "optmatch")) %dopar% {
+  get_distance(
+    school_scores = school_chunks[[i]],
+    student_scores = student_chunks[[i]],
+    treatment_schools = treatment_chunks[[i]],
+    caliper = caliper,
+    parallel_id = c(grade, subject, i),
+    method = method
+  )
 }
 stopCluster(cl)
 
