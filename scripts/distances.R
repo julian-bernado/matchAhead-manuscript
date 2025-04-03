@@ -142,7 +142,7 @@ get_distance <- function(
   # I calculate bias and effective sample size
   # I time it
   if (method == "matchAhead") {
-    for (i in seq_len(school_pairs)) {
+    for (i in seq_len(nrow(school_pairs))) {
       treatment <- school_pairs$treatment[i]
       control <- school_pairs$control[i]
 
