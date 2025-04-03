@@ -111,7 +111,7 @@ for (i in 1:num_cores){
 
 # serial version for debugging
 for(i in 1:num_cores){
-   get_distance(school_chunks[[i]], student_chunks[[i]], treatment_chunks[[i]], caliper, c(grade, subject, i))
+   get_distance(school_chunks[[i]], student_chunks[[i]], treatment_chunks[[i]], caliper, c(grade, subject, i), method)
 }
 
 
