@@ -42,7 +42,7 @@ caliper <- readRDS(caliper_path)
 caliper <- caliper[1,1] # Returned as a matrix
 
 # Create the treatment variable
-treatment_schools <- sample(school_scores$school_id, size = 340, replace = FALSE)
+treatment_schools <- sample(school_scores$school_id, size = 3, replace = FALSE)
 final_nt <- length(treatment_schools)
 
 # Write the log
@@ -56,7 +56,7 @@ log$final_nt <- final_nt
 #treatment_schools <- chosen_schools[1:5]
 
 # Batch the treatment schools by assigning each one to a chunk
-num_cores <- 12
+num_cores <- 3
 n_treatment_schools <- length(treatment_schools)
 chunk_sequence <- rep(1:num_cores, length.out = n_treatment_schools)
 chunk_ids <- sample(chunk_sequence, size = n_treatment_schools, replace = FALSE)
