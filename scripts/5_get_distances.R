@@ -95,24 +95,24 @@ for (i in 1:num_cores){
 }
 
 # Now, we call the get_distance function in parallel across the chunks
-cl <- makeCluster(num_cores)
-registerDoParallel(cl)
-foreach(i = 1:num_cores, .packages = c("dplyr", "readr", "optmatch")) %dopar% {
-  get_distance(
-    school_scores = school_chunks[[i]],
-    student_scores = student_chunks[[i]],
-    treatment_schools = treatment_chunks[[i]],
-    caliper = caliper,
-    parallel_id = c(grade, subject, i),
-    method = method
-  )
-}
-stopCluster(cl)
+#cl <- makeCluster(num_cores)
+#registerDoParallel(cl)
+#foreach(i = 1:num_cores, .packages = c("dplyr", "readr", "optmatch")) %dopar% {
+#  get_distance(
+#    school_scores = school_chunks[[i]],
+#    student_scores = student_chunks[[i]],
+#    treatment_schools = treatment_chunks[[i]],
+#    caliper = caliper,
+#    parallel_id = c(grade, subject, i),
+#    method = method
+#  )
+#}
+#stopCluster(cl)
 
 # serial version for debugging
-#for(i in 1:num_cores){
-#   get_distance(school_chunks[[i]], student_chunks[[i]], treatment_chunks[[i]], caliper, c(grade, subject, i))
-#}
+for(i in 1:num_cores){
+   get_distance(school_chunks[[i]], student_chunks[[i]], treatment_chunks[[i]], caliper, c(grade, subject, i))
+}
 
 
 # Update and write the log
