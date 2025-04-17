@@ -42,6 +42,9 @@ models/
 # RStudio files
 .Rproj.user/
 
+# rds
+*.rds
+
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
