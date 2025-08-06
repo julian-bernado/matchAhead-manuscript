@@ -1,8 +1,8 @@
-PWD /Users/julian/Desktop/repos/matchAhead-manuscript/manuscript/source
+PWD /Users/julian/Desktop/repos/Michigan/matchAhead-manuscript/manuscript/source
 INPUT /usr/local/texlive/2025/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/julian/Desktop/repos/matchAhead-manuscript/manuscript/source/manuscript.tex
+INPUT /Users/julian/Desktop/repos/Michigan/matchAhead-manuscript/manuscript/source/manuscript.tex
 OUTPUT manuscript.log
 INPUT ./imsart.cls
 INPUT imsart.cls

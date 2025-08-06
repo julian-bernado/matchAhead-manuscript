@@ -62,7 +62,6 @@
 %% \orcid{0000-0000-0000-0000}               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author[A]{\fnms{Julian}~\snm{Bernado} \ead[label=e1]{bernado@umich.edu}},
-\author[A]{\fnms{Katherine}~\snm{Brumberg}}
 \and
 \author[A]{\fnms{Ben}~\snm{Hansen}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -74,13 +73,6 @@ University of Michigan \printead[presep={ ,\ }]{e1}}
 \end{aug}
 
 \begin{abstract}
-  Multilevel data structures, where treatment is assigned at the group level but outcomes are measured at the
-unit level, pose significant challenges in causal analyses. Traditional matching methods that rely solely on
-group-level characteristics often fail to ensure unit-level comparability, leading to biased estimates. Existing
-approaches, such as those by Keele and Zubizarreta and Pimentel et al., address this issue by optimizing
-unit-level matches for each group pair but face substantial computational burdens when dealing with large
-datasets. 
-
 In this paper, we introduce a novel method for multilevel matching that preserves the integrity of unit-level
 comparability while significantly reducing computational demands. Our approach utilizes a prognostic model
 fitted on historical data to predict unit-level outcomes based on covariates, incorporating both group-level
@@ -141,13 +133,13 @@ The novelty of our method comes from the procedure used to perform the first-sta
 
 \begin{enumerate}
   \item Enumerate all pairs $P = \{(t, c) : t\in S_T , c\in S_C\}$ of treated and control groups.
-  \item For each pair $(t, c) \in P$, perform an matching of students in $t$ to students in $c$.
+  \item For each pair $(t, c) \in P$, perform a matching of students in $t$ to students in $c$.
   \item Calculate a distance $d(t, c)$ between groups $t$ and $c$ for all pairs $p\in P$ based on the results of the unit-level matching.
   \item Match each group in $S_T$ according to the distance matrix $D$ with $D_{tc} = d(t,c)$.
   \item Perform unit-level matches within each pair of matched groups, then estimate $\tau$ using these matches.
 \end{enumerate}
 
-We accept that comparing each treated to control school is a necessary part of creating well-formed matches, but focus on an improvement to the most costly part of their procedure: step 2.
+We accept that comparing each treated to control school is necessary to create well-formed matches, but focus on an improvement to the most costly part of their procedure: step 2.
 
 
 \section{Methodology}
@@ -156,7 +148,11 @@ In this section, we discuss the
 
 \subsection{Practical almost-exact matching}
 
-In the idealized setting, 
+In the idealized setting, units belonging to the same matched set have identical covariate values. With no unobserved confounding, exact covariate matching can be used to extract the causal quantity of interest exactly: $\hat{\tau} = \tau$. However, in practice this is nearly impossible due to continuous covariates and the combinatorial explosion of even categorial covariates. As such, the community has turned to dimension-reduction techniques to inform matching.  
+
+The most common covariate dimension-reduction in applied causal 
+
+
 
 
 % \subsection{Hierarchical modelling and calipers}
@@ -190,7 +186,6 @@ In the idealized setting,
   \item Write up how the prognostic scores and calipers are actually attained in our data
   \item Write up computational experiment procedure
   \item Write up placebo test procedure (incl. throughline matching description)
-  \item Describe what Katherine's doing
 \end{itemize}
 
 \subsection{Results}
@@ -198,20 +193,12 @@ In the idealized setting,
 \begin{itemize}
   \item computational comparison results. Plots showing comparative performance of the two: Scatter plot with school size on x-axis, time to complete on y-axis and Pie chart showing how many of our distances stopped after $e_1$, after $e_2$ and $e_3$.
   \item placebo test results. Plot: 12 confidence intervals stacked on one another. One for each grade and subject 3 through 5 and one for each method, colored differently. They all should be centered around zero hopefully. A table showing the bias and variance of each estimate next to one another to see when each method wins. Each method here is: random matching, naive matching, matchAhead matching, then matchMulti matching.
-  \item katherine's work results (tbd)
 \end{itemize}
 
 \section{Discussion}
 
 \begin{itemize}
   \item tbd, but obviously some summary, some highlighting of what's better about matchAhead distances
-\end{itemize}
-
-\section{Questions}
-\begin{itemize}
-  \item Broadest question is whether this outline makes sense for the whole thing
-  \item Too late to add to the method? (for the bias score, it pretty much adds nothing to the comparison for us to look at the average difference between those "matched" by the maxflow calc).
-  \item Is this what the authors list will look like or something else?
 \end{itemize}
 
 

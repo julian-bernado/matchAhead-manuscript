@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1746040854.39208 "/Users/julian/Desktop/repos/matchAhead-manuscript/manuscript/source/manuscript.tex" "manuscript.pdf" "manuscript" 1746040854.76495 0
-  "/Users/julian/Desktop/repos/matchAhead-manuscript/manuscript/source/manuscript.tex" 1746040854.19162 12731 b4954a98d486e62661fbf0d83bf84c35 ""
+["pdflatex"] 1752814278.83873 "/Users/julian/Desktop/repos/Michigan/matchAhead-manuscript/manuscript/source/manuscript.tex" "manuscript.pdf" "manuscript" 1752814279.21162 0
+  "/Users/julian/Desktop/repos/Michigan/matchAhead-manuscript/manuscript/source/manuscript.tex" 1752814278.65703 12156 b65111017fb46fd05d9cbfaf57276c0d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -127,9 +127,9 @@
   "imsart.cls" 1743416946 4981 3a3dfc4d7ac7074d7703c84e76b63153 ""
   "imsart.cnf" 0 -1 0 ""
   "imsart.sty" 1743416946 165537 6a25da8ec19e2b81d8d4208a2d74f6d7 ""
-  "manuscript.aux" 1746040854.72707 1859 75384efeb83291e2c980eb9e141bfaa6 "pdflatex"
-  "manuscript.out" 1746040854.72754 1559 bcddd8461c178b09ef739f2377b7ca90 "pdflatex"
-  "manuscript.tex" 1746040854.19162 12731 b4954a98d486e62661fbf0d83bf84c35 ""
+  "manuscript.aux" 1752814279.17123 1733 bbb7f9457c6a763fe82925a2536c9435 "pdflatex"
+  "manuscript.out" 1752814279.1717 1470 444d0e02dff6dd210adf0a60e465464e "pdflatex"
+  "manuscript.tex" 1752814278.65703 12156 b65111017fb46fd05d9cbfaf57276c0d ""
   (generated)
   "manuscript.aux"
   "manuscript.log"

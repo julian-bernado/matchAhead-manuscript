@@ -41,7 +41,7 @@ caliper <- readRDS(caliper_path)
 caliper <- caliper[1,1] # Returned as a matrix
 
 # Create the treatment variable
-treatment_schools <- sample(school_scores$school_id, size = 3, replace = FALSE)
+treatment_schools <- sample(school_scores$school_id, size = 300, replace = FALSE)
 final_nt <- length(treatment_schools)
 
 # Write the log
