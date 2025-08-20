@@ -7,7 +7,7 @@ PIMENTEL_FILENAME <- "keele_output.csv"
 
 ma_results_df <- read_csv(paste0("outputs/", MA_FILENAME))
 pimentel_results_df <- read_csv(paste0("outputs/", PIMENTEL_FILENAME))
-school_df <- read_csv("2022_3_glmath_df.csv")
+school_df <- read_csv("data/2022_3_glmath_df.csv")
 
 # All we care about from school_df (which is at the student level) is schoolid_state_enroll_p0
 # We should make a new df with one column being schoolid_state_enroll_p0
