@@ -17,6 +17,7 @@ synthetic <- FALSE  # Set to FALSE to use real/prepared data
 args <- commandArgs(trailingOnly = TRUE)
 GRADE <- args[1]
 SUBJECT <- args[2]
+NUM_SAMPLE <- args[3]
 
 
 if(synthetic){
@@ -45,7 +46,7 @@ if(synthetic){
   # Define parameters for data preparation
   old_path <- paste0("data/2019_", GRADE, "_", SUBJECT, "_df.csv")
   new_path <- paste0("data/2022_", GRADE, "_", SUBJECT, "_df.csv")
-  S <- 1200                          # Number of groups to sample
+  S <- as.numeric(NUM_SAMPLE)        # Number of groups to sample
   proportion_treated <- 268/3605     # Example proportion
   
   # Prepare old_data

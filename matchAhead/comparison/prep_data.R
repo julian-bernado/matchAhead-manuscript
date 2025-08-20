@@ -7,9 +7,8 @@ source("scripts/end_to_end.R")
 prep_data <- function(path, S, proportion_treated = 268/3605){
   df <- read_csv(path) %>% dplyr::select(-any_of(c("studentid_state_enroll")))
   schools <- df %>% pull(schoolid_state_enroll_p0) %>% unique()
-  print("TOTAL NUMBER OF SCHOOLS:")
-  print(length(schools))
-  selected_schools <- sample(schools, size = S)
+  num_schools <- length(schools)
+  selected_schools <- sample(schools, size = min(S, num_schools))
   df <- df %>%
     filter(schoolid_state_enroll_p0 %in% selected_schools) %>%
     assign_treatment(Nt = max(1, floor(S * proportion_treated)), grouping = "schoolid_state_enroll_p0")
