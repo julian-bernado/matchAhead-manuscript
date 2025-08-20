@@ -13,7 +13,7 @@ source("comparison/prep_data.R")
 source("comparison/compare.R")
 
 # Define the synthetic data flag
-synthetic <- TRUE  # Set to FALSE to use real/prepared data
+synthetic <- FALSE  # Set to FALSE to use real/prepared data
 
 if(synthetic){
   cat("Generating synthetic data...\n")
@@ -39,7 +39,7 @@ if(synthetic){
   cat("Preparing real data...\n")
   
   # Define parameters for data preparation
-  old_path <- "data/2021_3_glmath_df.csv"
+  old_path <- "data/2019_3_glmath_df.csv"
   new_path <- "data/2022_3_glmath_df.csv"
   S <- 1200                          # Number of groups to sample
   proportion_treated <- 268/3605     # Example proportion
