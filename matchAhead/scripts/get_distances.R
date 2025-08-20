@@ -183,9 +183,6 @@ distance_keele <- function(treatment_group, control_group, unit_preds, data){
   colnames(distance_matrix) <- (Nt+1):(Nt+Nc)
   
   # Pair match
-  print("DBG:")
-  print(Nt)
-  print(Nc)
   pairings <- pairmatch(distance_matrix, controls = max(1, floor(ctrl_trt_ratio)), data = total_vals)
   matched_treated <- group1_vals[!is.na(pairings[1:Nt])]
   matched_controls <- group2_vals[!is.na(pairings[(Nt+1):(Nt+Nc)])]
