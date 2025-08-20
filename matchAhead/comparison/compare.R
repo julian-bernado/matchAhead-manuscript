@@ -49,7 +49,6 @@ compare <- function(old_data,
   cat("Total number of pairs:", total_pairs, "\n")
   print(dim(old_data))
   print(dim(new_data))
-  stop("DBG")
   
   # Run end_to_end_modular with use_keele = FALSE
   cat("Running end_to_end_modular (standard version)...\n")
