@@ -111,7 +111,7 @@ variance_measure <- function(treatment_group, control_group, data, group_preds, 
 
 get_distances <- function(data, pairs_data, unit_preds, group_preds, unit_caliper){
   # Pre-allocate columns
-  pairs_data[, `:=`(bias = NA_real_, ess = NA_real_)]
+  pairs_data[, `:=`(bias = NA_real_, ess = NA_real_, elapsed = NA_real_, cpu_time = NA_real_)]
   
   results <- mapply(
     FUN = variance_measure,
@@ -211,7 +211,7 @@ distance_keele <- function(treatment_group, control_group, unit_preds, data){
 
 get_distances_keele <- function(data, pairs_data, unit_preds) {
   # Pre-allocate columns
-  pairs_data[, `:=`(bias = NA_real_, ess = NA_real_)]
+  pairs_data[, `:=`(bias = NA_real_, ess = NA_real_, elapsed = NA_real_, cpu_time = NA_real_)]
   
   # Apply distance_keele and assign directly
   results <- mapply(
