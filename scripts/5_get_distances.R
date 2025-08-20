@@ -20,7 +20,7 @@ library(readr)
 library(doParallel)
 source("scripts/helpers.R")
 source("scripts/maxflow.R")
-source("scripts/distances.R")
+source("matchAhead/scripts/distances.R")
 
 # Parse the input options
 arguments <- commandArgs(trailingOnly = TRUE)
@@ -76,7 +76,7 @@ student_scores <- student_scores %>%
     left_join(school_scores, by = c("student_schools" = "school_id")) %>%
     rename(school_id = student_schools)
 
-# Make lists that will store the data that gets passed into each parallel video
+# Make lists that will store the data that gets passed into each parallel call
 school_chunks <- vector("list", num_cores)
 student_chunks <- vector("list", num_cores)
 treatment_chunks <- vector("list", num_cores)
