@@ -14,6 +14,10 @@ source("comparison/compare.R")
 
 # Define the synthetic data flag
 synthetic <- FALSE  # Set to FALSE to use real/prepared data
+args <- commandArgs(trailingOnly = TRUE)
+GRADE <- args[1]
+SUBJECT <- args[2]
+
 
 if(synthetic){
   cat("Generating synthetic data...\n")
@@ -39,8 +43,8 @@ if(synthetic){
   cat("Preparing real data...\n")
   
   # Define parameters for data preparation
-  old_path <- "data/2019_3_glmath_df.csv"
-  new_path <- "data/2022_3_glmath_df.csv"
+  old_path <- paste0("data/2019_", GRADE, "_", SUBJECT, "_df.csv")
+  new_path <- paste0("data/2022_", GRADE, "_", SUBJECT, "_df.csv")
   S <- 1200                          # Number of groups to sample
   proportion_treated <- 268/3605     # Example proportion
   
@@ -51,6 +55,7 @@ if(synthetic){
   # Prepare new_data
   cat("Preparing new_data...\n")
   new_data <- prep_data(path = new_path, S = S, proportion_treated = proportion_treated)
+  stop("dbg")
 }
 
 # Define parameters for the compare function

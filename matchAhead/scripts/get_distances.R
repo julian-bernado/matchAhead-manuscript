@@ -104,7 +104,6 @@ variance_measure <- function(treatment_group, control_group, data, group_preds, 
     ),
     nrow = 4
   )
-  output <- matrix(c(bias, ess), nrow = 2)
   
   return(output)
 }
