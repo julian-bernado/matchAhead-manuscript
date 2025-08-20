@@ -56,7 +56,6 @@ if(synthetic){
   # Prepare new_data
   cat("Preparing new_data...\n")
   new_data <- prep_data(path = new_path, S = S, proportion_treated = proportion_treated)
-  stop("dbg")
 }
 
 # Define parameters for the compare function
