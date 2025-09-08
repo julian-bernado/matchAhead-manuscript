@@ -111,7 +111,7 @@ based on group-level characteristics while also avoiding the computational burde
 unit-level matches. I do so by considering a simple yet highly informative measure of unit-level comparability
 for each pairing of groups. Modern multi-level matching approaches successfully match groups that will have
 promising unit-level matches by ”looking ahead” to the best possible matching in each pairing of schools.
-However, the work in [4] demonstrates the method's success for a number of schools on the order of one county, raising questions for scalability when analysis is done on all schools in a given state.
+However, the work in [cite Pimentel] demonstrates the method's success for a number of schools on the order of one county, raising questions for scalability when analysis is done on all schools in a given state.
 Our method
 maintains the ”look ahead” ethos of modern strategies, but rather than finding an optimal match in each
 pair we take a ”coarser” look at potential unit-matches to save on computation time. I demonstrate the
@@ -148,9 +148,9 @@ In this section, we discuss the
 
 \subsection{Practical almost-exact matching}
 
-In the idealized setting, units belonging to the same matched set have identical covariate values. With no unobserved confounding, exact covariate matching can be used to extract the causal quantity of interest exactly: $\hat{\tau} = \tau$. However, in practice this is nearly impossible due to continuous covariates and the combinatorial explosion of even categorial covariates. As such, the community has turned to dimension-reduction techniques to inform matching.  
+In the idealized setting, units belonging to the same matched set have identical covariate values. With no unobserved confounding, exact covariate matching reduces the estimation of $\tau$ to a problem of sampling. However, in practice this is nearly impossible due to inexact alignment on continuous covariates and the combinatorial explosion of even categorial covariates. As such, the community has turned to dimension-reduction techniques to inform matching.  
 
-The most common covariate dimension-reduction in applied causal 
+The most common covariate dimension-reduction in applied causal work is propensity score estimation. By estimating the propensity of treatment  
 
 
 
