@@ -4,7 +4,10 @@ library(readr)
 subset_data <- function(grade, subject, N = 100) {
   df <- read_csv(paste0("data/2019_", grade, "_", subject, "_df.csv"))
   unique_schools <- df |> pull(schoolid_state_enroll_p0) |> unique()
+  sub_df <- df |> filter(schoolid_state_enroll_p0 %in% unique_schools)
   print(length(unique_schools))
+  print(nrows(df))
+  print(nrows(sub_df))
 }
 
 grades <- c(3, 4, 5)
