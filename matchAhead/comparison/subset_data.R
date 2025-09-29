@@ -6,10 +6,10 @@ subset_data <- function(grade, subject, N = 250) {
   unique_schools <- df |> pull(schoolid_state_enroll_p0) |> unique()
   subset_schools <- sample(unique_schools, N)
   sub_df <- df |> filter(schoolid_state_enroll_p0 %in% subset_schools)
-  write_csv(paste0("data/2019sub_", grade, "_", subject, "_df.csv"))
-  df2 <- read_csv(as.data.frame(sub_df), paste0("data/2022_", grade, "_", subject, "_df.csv"))
+  write_csv(sub_df, paste0("data/2019sub_", grade, "_", subject, "_df.csv"))
+  df2 <- read_csv(paste0("data/2022_", grade, "_", subject, "_df.csv"))
   sub_df2 <- df2 |> filter(schoolid_state_enroll_p0 %in% subset_schools)
-  write_csv(as.data.frame(sub_df2), paste0("data/2022sub_", grade, "_", subject, "_df.csv"))
+  write_csv(sub_df2, paste0("data/2022sub_", grade, "_", subject, "_df.csv"))
 
 }
 
