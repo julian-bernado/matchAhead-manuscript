@@ -12,7 +12,7 @@ subs <- c("glmath", "readng")
 
 for (grade in grades) {
   for (sub in subs) {
-    print(paste0("Grade: ", grade, "\n Subject: ", subject))
+    print(paste0("Grade: ", grade, "\n Subject: ", sub))
     subset_data()
   }
 }
