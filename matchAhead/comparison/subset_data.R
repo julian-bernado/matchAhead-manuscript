@@ -1,7 +1,7 @@
 library(dplyr)
 library(readr)
 
-subset_data <- function(grade, subject, N = 500) {
+subset_data <- function(grade, subject, N = 250) {
   df <- read_csv(paste0("data/2019_", grade, "_", subject, "_df.csv"))
   unique_schools <- df |> pull(schoolid_state_enroll_p0) |> unique()
   subset_schools <- sample(unique_schools, N)
